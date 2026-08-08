@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+        }
+
+        /* Moving Red, White, and Blue Animated Background */
+        .animated-bg {
+            background: linear-gradient(-45deg, #dc2626, #ffffff, #2563eb, #f8fafc, #ef4444);
+            background-size: 400% 400%;
+            animation: gradientAnimation 12s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="animated-bg min-h-screen flex flex-col justify-between text-slate-800">
+
+    <!-- Main Container -->
+    <main class="max-w-2xl mx-auto px-4 py-12 w-full">
+        <!-- Header Card -->
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 border border-white/40 text-center">
+            
+            <!-- Logo Image Container -->
+            <div class="flex justify-center mb-4">
+                <img src="Logo.jpeg" alt="Akhila Kerala Balajanasakhyam Logo" class="h-28 sm:h-36 object-contain">
+            </div>
+
+            <!-- 3-Line Header for Desktop and Mobile -->
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2 space-y-1">
+                <span class="block">AKHILA KERALA BALAJANASAKHYAM</span>
+                <span class="block">KOLLAM MAKHALA</span>
+                <span class="block text-xl sm:text-2xl font-bold text-blue-600">Registration Form 2026-27</span>
+            </h1>
+
+            <p class="text-slate-500 text-sm sm:text-base mb-8 mt-4">
+                Select your Union from the list below to proceed to the registration form.
+            </p>
+
+            <!-- Union Form Selector -->
+            <form id="unionForm" onsubmit="handleFormSubmit(event)" class="space-y-5 text-left">
+                <div>
+                    <label for="unionSelect" class="block text-sm font-semibold text-slate-700 mb-2">
+                        Select Union
+                    </label>
+                    <select id="unionSelect" required 
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all cursor-pointer">
+                        <option value="" disabled selected>-- Choose your Union --</option>
+                        <option value="union1">Kottarakara Union</option>
+                        <option value="union2">Kollam Union</option>
+                        <option value="union3">Thevalakara Union</option>
+                        <option value="union4">Vettikavala Union</option>
+                        <option value="union5">Valakam Union</option>
+                        <option value="union6">Anchal Union</option>
+                        <option value="union7">Cheruvakkal Union</option>
+                        <option value="union8">Chathannur Union</option>
+                        <option value="union9">Karunagapally Union</option>
+                        <option value="union10">Puthur Union</option>
+                        <option value="union11">Kunnikode Union</option>
+                        <option value="union12">Punalur Union</option>
+                        <option value="union13">Kundara Union</option>
+                        <option value="union14">Kallada Union</option>
+                        <option value="union15">Other Union</option>
+                    </select>
+                </div>
+
+                <button type="submit" 
+                    class="w-full py-3.5 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2">
+                    <span>Proceed to Registration</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </form>
+
+            <div id="errorMsg" class="hidden mt-4 text-sm text-red-600 font-medium"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs font-medium text-slate-700 bg-white/40 backdrop-blur-sm">
+        Balajana Sakyam Kollam Mekala &copy; 2026-27
+    </footer>
+
+    <!-- Configuration Script -->
+    <script>
+        // PASTE YOUR 15 GOOGLE FORM LINKS HERE
+        const unionFormLinks = {
+            "union1": "https://forms.google.com/YOUR_FORM_LINK_1",
+            "union2": "https://forms.google.com/YOUR_FORM_LINK_2",
+            "union3": "https://forms.google.com/YOUR_FORM_LINK_3",
+            "union4": "https://forms.google.com/YOUR_FORM_LINK_4",
+            "union5": "https://forms.google.com/YOUR_FORM_LINK_5",
+            "union6": "https://forms.google.com/YOUR_FORM_LINK_6",
+            "union7": "https://forms.google.com/YOUR_FORM_LINK_7",
+            "union8": "https://forms.google.com/YOUR_FORM_LINK_8",
+            "union9": "https://forms.google.com/YOUR_FORM_LINK_9",
+            "union10": "https://forms.google.com/YOUR_FORM_LINK_10",
+            "union11": "https://forms.google.com/YOUR_FORM_LINK_11",
+            "union12": "https://forms.google.com/YOUR_FORM_LINK_12",
+            "union13": "https://forms.google.com/YOUR_FORM_LINK_13",
+            "union14": "https://forms.google.com/YOUR_FORM_LINK_14",
+            "union15": "https://forms.google.com/YOUR_FORM_LINK_15"
+        };
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const selectedUnion = document.getElementById('unionSelect').value;
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (selectedUnion && unionFormLinks[selectedUnion]) {
+                const url = unionFormLinks[selectedUnion];
+                if (url.includes("YOUR_FORM_LINK")) {
+                    errorMsg.textContent = "Please update the Google Form URL for this union in index.html.";
+                    errorMsg.classList.remove('hidden');
+                } else {
+                    errorMsg.classList.add('hidden');
+                    window.location.href = url;
+                }
+            } else {
+                errorMsg.textContent = "Please select a valid Union.";
+                errorMsg.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
