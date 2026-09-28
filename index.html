@@ -69,19 +69,63 @@
         <!-- ==================== REGISTRATION TAB ==================== -->
         <div id="tab-registration" class="block space-y-6">
 
-            <!-- "സർഗോത്സവം 2026-27 Coming Soon" Banner -->
+            <!-- "സർഗോത്സവം 2026" Banner Section -->
             <div class="bg-gradient-to-r from-amber-500 via-red-500 to-pink-500 rounded-2xl p-0.5 shadow-xl transition-transform transform hover:-translate-y-0.5">
-                <div class="bg-white/95 backdrop-blur-md rounded-[15px] p-4 text-center">
+                <div class="bg-white/95 backdrop-blur-md rounded-[15px] p-4 sm:p-6 text-center">
                     <div class="inline-flex items-center space-x-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
                         <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
                         <span>Announcement</span>
                     </div>
-                    <h2 class="malayalam-text text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-purple-600 to-blue-600">
-                        സർഗോത്സവം 2026-27
+                    <h2 class="malayalam-text text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 mb-3">
+                        സർഗോത്സവം 2026
                     </h2>
-                    <p class="text-slate-700 font-bold text-sm sm:text-base tracking-widest mt-1 uppercase">
-                        Coming Soon
-                    </p>
+
+                    <!-- Click Here For More Info Button -->
+                    <button onclick="toggleSargotsavamInfo()" class="mt-1 inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+                        <span>Click Here for More Info</span>
+                        <svg id="sargotsavam-arrow" class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Expandable Info Content -->
+                    <div id="sargotsavam-details" class="hidden mt-6 text-left border-t border-slate-200 pt-5 space-y-4 malayalam-text text-slate-800 text-sm sm:text-base leading-relaxed">
+                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                            <h3 class="text-base sm:text-lg font-bold text-blue-900 mb-2 border-b border-blue-200 pb-1">
+                                ബാലജനസഖ്യം സർഗോത്സവം 2026
+                            </h3>
+                            <p class="text-justify">
+                                <strong>കോട്ടയം ∙</strong> അഖിലകേരള ബാലജനസഖ്യത്തിന്റെ എല്ലാ യൂണിയനുകളിലും മേഖലകളിലും ഒക്ടോബർ, നവംബർ മാസങ്ങളിലായി സർഗോത്സവം നടത്തണമെന്നു ശങ്കരച്ചേട്ടൻ അറിയിക്കുന്നു.
+                            </p>
+                        </div>
+
+                        <p class="text-justify">
+                            മോണോ ആക്ട്, ലളിതഗാനം, മിമിക്രി, വാർത്ത വായന, നാടോടിനൃത്തം, വാട്ടർ കളറിങ്, കഥാരചന (മലയാളം, ഇംഗ്ലീഷ്), പോസ്റ്റർ ഡിസൈനിങ് എന്നീ ഇനങ്ങളിലാണ് മൽസരങ്ങൾ നടത്തുക. ജൂനിയർ, സീനിയർ വിഭാഗങ്ങളിൽ സർഗോത്സവം നടക്കും.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 mb-1">മത്സര സമയം:</h4>
+                            <p class="text-slate-700">
+                                വാട്ടർ കളറിങ്, സ്റ്റോറി റൈറ്റിങ്, പോസ്റ്റർ ഡിസൈനിങ് എന്നീ മൽസരങ്ങൾക്ക് ഒരു മണിക്കൂറും, വാർത്ത വായന മൂന്നു മിനിറ്റും മറ്റുള്ളവയ്ക്ക് അഞ്ചു മിനിറ്റുമാണു സമയം അനുവദിക്കുക.
+                            </p>
+                        </div>
+
+                        <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-200">
+                            <h4 class="font-bold text-amber-900 mb-1">പ്രായപരിധി:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-amber-800">
+                                <li><strong>ജൂനിയർ:</strong> 1–4–2014നും 31–3–2020 നും മധ്യേ ജനിച്ചവർ.</li>
+                                <li><strong>സീനിയർ:</strong> 1–4–2009 നും 31–3–2014 നും മധ്യേ ജനിച്ചവർ.</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-justify font-semibold text-slate-800">
+                            മേഖലാ തലത്തിൽ നടക്കുന്ന മൽസരങ്ങളിൽ ഒന്നാം സ്ഥാനം ലഭിക്കുന്നവർക്ക് സംസ്ഥാനതല മൽസരത്തിൽ പങ്കെടുക്കാം.
+                        </p>
+
+                        <div class="mt-4 p-3 bg-red-50 border border-red-200 text-red-800 font-bold rounded-xl text-center">
+                            യൂണിയൻ തല മത്സര വിവരങ്ങൾക്കായി, യൂണിയൻ രക്ഷാധികാരിയുമായി ബന്ധപ്പെടുക.
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -323,6 +367,20 @@
             "union15": "https://forms.gle/UfzVJNqow39ayozd7",
             "union16": "https://docs.google.com/forms/d/e/1FAIpQLSdA8cq9sT5QHy-SltdjxGkoA0FlWKpBtjzwugNdXQUtHNR_XQ/viewform?usp=dialog"
         };
+
+        // Sargotsavam Accordion Toggle Logic
+        function toggleSargotsavamInfo() {
+            const details = document.getElementById('sargotsavam-details');
+            const arrow = document.getElementById('sargotsavam-arrow');
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                arrow.classList.add('rotate-180');
+            } else {
+                details.classList.add('hidden');
+                arrow.classList.remove('rotate-180');
+            }
+        }
 
         // Tab Switching Logic
         function switchTab(tabName) {
